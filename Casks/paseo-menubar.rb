@@ -37,8 +37,10 @@ cask "paseo-menubar" do
     strategy :github_latest
   end
 
-  # LSMinimumSystemVersion in the built bundle is 12.0.
-  depends_on macos: ">= :monterey"
+  # LSMinimumSystemVersion in the built bundle is 12.0. The bare symbol reads as
+  # "exactly Monterey" but Homebrew resolves it to a minimum -- `brew info`
+  # reports "macOS >= 12" -- and the `">= :monterey"` spelling is deprecated.
+  depends_on macos: :monterey
   depends_on arch: :arm64
 
   app "PaseoIcon.app"
