@@ -23,8 +23,8 @@
 # stays "Paseo Icon" (the app's own name). Homebrew keeps those separate on
 # purpose; `name` is what `brew info` shows.
 cask "paseo-menubar" do
-  version "0.1.0"
-  sha256 "b7843da2e2cabc56db02565818abe2ad5c9d0896b041228e8ee2b76c0c44d00d"
+  version "0.2.0"
+  sha256 "afa835415fc29e5625009d2ec0f330e34eb9153e27dc06e369e262f5e7b423de"
 
   url "https://github.com/gpambrozio/paseo-menubar/releases/download/v#{version}/Paseo-Icon-#{version}-arm64.dmg",
       verified: "github.com/gpambrozio/paseo-menubar/"
@@ -49,9 +49,9 @@ cask "paseo-menubar" do
   # leave it running with its menu bar item still there.
   uninstall quit: "br.eng.gustavo.paseo-menubar"
 
-  # config.json lives in the userData directory, which Electron names from
-  # productName -- "Paseo Icon", not the cask token. It holds TCP passwords and
-  # relay keys, so `brew uninstall --zap` is the one that really removes them.
+  # The userData directory is named from productName -- "Paseo Icon", not the
+  # cask token. The app keeps no host credentials of its own (they are read from
+  # the Paseo desktop app's storage), so this is Electron's own state only.
   zap trash: [
     "~/Library/Application Support/Paseo Icon",
     "~/Library/Preferences/br.eng.gustavo.paseo-menubar.plist",
