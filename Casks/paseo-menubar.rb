@@ -26,8 +26,7 @@ cask "paseo-menubar" do
   version "0.2.0"
   sha256 "afa835415fc29e5625009d2ec0f330e34eb9153e27dc06e369e262f5e7b423de"
 
-  url "https://github.com/gpambrozio/paseo-menubar/releases/download/v#{version}/Paseo-Icon-#{version}-arm64.dmg",
-      verified: "github.com/gpambrozio/paseo-menubar/"
+  url "https://github.com/gpambrozio/paseo-menubar/releases/download/v#{version}/Paseo-Icon-#{version}-arm64.dmg"
   name "Paseo Icon"
   desc "Menu-bar indicator for Paseo workspaces"
   homepage "https://github.com/gpambrozio/paseo-menubar"
